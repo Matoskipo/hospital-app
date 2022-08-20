@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+       .butns .delete a{
+            color: red;
+            font-size: 30px;
+        }
+        .butns .back a, .edit a {
+            text-decoration: none;
+            
+        }
+        .butns .back button, .edit button{
+            border-radius: 5px;
+            
+        }
+        .edit button {
+            width: 60px;
+        }
+ .top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  margin-top: 15px;
+  background: none;
+  font-size: 25px;
+  
+}
+.top-left a{
+  color:green;
+}
+.top-left a:hover{
+  color: black;
+}
+body{
+  background-color: gray;
+}
+.card-body{
+
+background-color: rgb(238, 231, 231);
+
+}
+
+    </style>
+</head>
+<body>
+
+    <section class="top-section" >
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+          <button type="button" class="btn top-left"><a href="/dashboard"><i class="fa fa-arrow-left"></i></a></button> 
+          <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+              <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                <div class="card mt-4 mb-2" style="border-radius: 15px;">
+                  <div class="card-body" >
+                    <h2 class="text-uppercase text-center mb-2">Edit Details</h2>
+                    <% id = updateUniquePatient.id %>
+                    <form action="/patients/update/<%= id %>" method="post" class="my-form">
+                      <div class="form-outline mb-2">
+                        <label for="">Name</label>
+                        <input type="text" id="form3Example1cg" class="form-control form-control-lg" value="<%= updateUniquePatient.patientName %>" name="patientName"/> 
+                      </div>
+                      <div class="form-outline mb-2">
+                        <label for="">Age</label>
+                          <input type="text" id="form3Example3cg" class="form-control form-control-lg" value="<%= updateUniquePatient.age %>" name="age"/>
+                        </div>
+                      <div class="form-outline mb-2">
+                        <label for="">Hospital Name</label>
+                          <input type="text" id="form3Example3cg" class="form-control form-control-lg" value="<%= updateUniquePatient.hospitalName %>" name="hospitalName"/>
+                        </div>
+                      <div class="form-outline mb-2">
+                        <label for="">Weight</label>
+                          <input type="text" id="form3Example3cg" class="form-control form-control-lg" value="<%= updateUniquePatient.weight %>" name="weight"/>
+                        </div>
+                        <div class="form-outline mb-2">
+                            <label for="">Height</label> 
+                          <input type="text" id="form3Example3cg" class="form-control form-control-lg" value=" <%= updateUniquePatient.height %>" name="height"/>
+                        </div>
+                      <div class="form-outline mb-2">
+                        <label for="">Blood Group</label>
+                        <input type="text" id="form3Example4cg" class="form-control form-control-lg" value="<%= updateUniquePatient.bloodGroup %>" name="bloodGroup"/>
+                      </div>
+                      <div class="form-outline mb-2">
+                        <label for="">Genotype</label>
+                        <input type="text" id="form3Example4cdg" class="form-control form-control-lg" value="<%= updateUniquePatient.genotype %>" name="genotype"/>
+                      </div>
+                      <div class="form-outline mb-2">
+                        <label for="">Blood Pressure</label>
+                        <input type="text" id="form3Example4cdg" class="form-control form-control-lg" value="<%= updateUniquePatient.bloodPressure %>" name="bloodPressure"/>
+                      </div>
+                      <div class="form-outline mb-2">
+                        <label for="">HIV Status</label>
+                        <input type="text" id="form3Example4cdg" class="form-control form-control-lg" value="<%= updateUniquePatient.HIV_status %>" name="HIV_status"/>
+                      </div>
+                      <div class="form-outline mb-2">
+                        <label for="">Hepatitis</label>
+                        <input type="text" id="form3Example4cdg" class="form-control form-control-lg" value="<%= updateUniquePatient.hepatitis %>" name="hepatitis"/>
+                      </div>
+                      <div class="d-flex justify-content-center">
+                        <button type="submit"
+                          class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Update</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <style>
+      .card {
+        border-radius: 15px;
+      }
+      body {
+        background-color: rgba(0, 0, 0, 0.614);
+        height: 95vh;
+      }
+      .my-form {
+        height: 73vh;
+      }
+
+      .top-section {
+        position: relative;
+        text-align: center;
+      }
+      .top-left {
+        position: absolute;
+        top: 8px;
+        left: 16px;
+        margin-top: 15px;
+        background: none;
+        font-size: 25px;
+      }
+      .top-left a {
+        color: white;
+      }
+      .top-left a:hover {
+        color: rgb(17, 224, 17);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="top-section">
+      <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <button type="button" class="btn top-left">
+          <a href="/"><i class="fa fa-arrow-left"></i></a>
+        </button>
+        <div class="container h-100">
+          <div
+            class="row d-flex justify-content-center align-items-center h-100"
+          >
+            <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+              <div class="card" style="border-radius: 15px">
+                <div class="card-body p-5">
+                  <h2 class="text-uppercase text-center mb-5">
+                    Create an account
+                  </h2>
+
+                  <form id="regform" action="/doctors/register" method="post">
+                    <div class="form-outline mb-2">
+                      <input
+                        type="text"
+                        name="DoctorsName"
+                        id="form3Example1cg"
+                        class="form-control form-control-lg"
+                      />
+                      <label for="DoctorsName">Enter your name</label>
+                    </div>
+                    <div class="form-outline mb-2">
+                      <input
+                        type="email"
+                        name="email"
+                        id="form3Example3cg"
+                        class="form-control form-control-lg"
+                      />
+                      <label for="email">Enter email</label>
+                    </div>
+                    <div class="form-outline mb-2">
+                      <input
+                        type="text"
+                        name="specialization"
+                        id="form3Example3cg"
+                        class="form-control form-control-lg"
+                      />
+                      <label for="specialization"
+                        >Enter your specialization</label
+                      >
+                    </div>
+                    <div class="form-outline mb-2">
+                      <input
+                        type="text"
+                        name="gender"
+                        id="form3Example3cg"
+                        class="form-control form-control-lg"
+                      />
+                      <label for="gender">Enter your gender</label>
+                    </div>
+                    <div class="form-outline mb-2">
+                      <input
+                        type="text"
+                        name="phoneNumber"
+                        id="form3Example3cg"
+                        class="form-control form-control-lg"
+                      />
+                      <label for="phoneNumber">Enter your phoneNumber</label>
+                    </div>
+                    <div class="form-outline mb-2">
+                      <input
+                        type="password"
+                        name="password"
+                        id="form3Example3cg"
+                        class="form-control form-control-lg"
+                      />
+                      <label for="password">Enter password</label>
+                    </div>
+                    <div class="form-outline mb-2">
+                      <input
+                        type="password"
+                        name="confirm_password"
+                        id="form3Example3cg"
+                        class="form-control form-control-lg"
+                      />
+                      <label for="password">Repeat password</label>
+                    </div>
+                    <div class="form-check d-flex justify-content-center mb-5">
+                      <input
+                        class="form-check-input me-2"
+                        type="checkbox"
+                        value=""
+                        id="form2Example3cg"
+                      />
+                      <label class="form-check-label" for="form2Example3g">
+                        I agree all statements in
+                        <a href="#!" class="text-body"
+                          ><u>Terms of service</u></a
+                        >
+                      </label>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                      <button
+                        id="submit-btn"
+                        class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"
+                      >
+                        Register
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

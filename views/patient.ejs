@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+       .delete {
+            color:red;
+            font-size: 30px;
+        }
+        .butns .back a, .edit a {
+            text-decoration: none;
+            
+        }
+        .butns .back button, .edit button{
+            border-radius: 5px;
+            
+        }
+        .edit button {
+            width: 60px;
+        }
+
+        button {
+  background-color: gray;
+  color: white;
+  padding: 10px 15px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  
+  opacity: 0.9;
+}
+button a{
+  color: white;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Float cancel and delete buttons and add an equal width */
+.cancelbtn, .deletebtn {
+  float: left;
+  width: 50%;
+  
+}
+
+
+/* Add a color to the cancel button */
+.cancelbtn a{
+  
+  color: black;
+  text-decoration: none;
+}
+
+/* Add a color to the delete button */
+.deletebtn {
+  background-color: #f44336;
+}
+
+/* Add padding and center-align text to the container */
+.container {
+  padding: 16px;
+  text-align: center;
+}
+.container p{
+  color: black;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* The Modal Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and delete button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .deletebtn {
+    width: 100%;
+  }
+}
+button .my-btn a{
+  color: white;
+}
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">MattyCare</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/patients/update/unique/<%= id %>">Edit Details</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+ <% id = uniquePatient.id %>
+    <table class="table my-table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> Patient Name </td>
+            <td> <%= uniquePatient.patientName %>  </td>
+          </tr>
+          <tr>
+            <td> Age </td>
+            <td> <%= uniquePatient.age %>  </td>
+          </tr>
+          <tr>
+            <td> Weight </td>
+            <td> <%= uniquePatient.weight %>  </td>
+          </tr>
+          <tr>
+            <td> Height </td>
+            <td> <%= uniquePatient.height %>  </td>
+          </tr>
+          <tr>
+            <td> Blood Group </td>
+            <td> <%= uniquePatient.bloodGroup %>  </td>
+          </tr>
+          <tr>
+            <td> Genotype </td>
+            <td> <%= uniquePatient.genotype %>  </td>
+          </tr>
+          <tr>
+            <td> Blood Pressure </td>
+            <td> <%= uniquePatient.bloodPressure %>  </td>
+          </tr>
+          <tr>
+            <td> HIV Status </td>
+            <td> <%= uniquePatient.HIV_status %>  </td>
+          </tr>
+          <tr>
+            <td> Hepatitis </td>
+            <td> <%= uniquePatient.hepatitis %>  </td>
+          </tr>
+        </tbody>
+      </table>
+<div class="row justify-content-center butns">
+      <div class="col-md-6 back">
+          <button class="btn btn-primary"><a href="../dashboard">Go Back</a></button>
+      </div>
+  <div class="col-md-6">
+  <div class="row">
+       <div class="col-md-6 edit">
+        <button class="btn btn-primary"><a href="/patients/update/unique/<%= id %>">Edit</a></button>
+       </div>
+      <div class="col-md-6 delete">
+          <button class="btn btn-primary" onclick="document.getElementById('id01').style.display='block'">Delete</button>
+
+        <div id="id01" class="modal">
+         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <form class="modal-content" action="/patients/delete/<%= id %>" method="post">
+         <div class="container">
+         <p>Are you sure you want to delete your account?</p>
+
+            <div class="clearfix">
+            <button type="button" id="cancealBtn" class="cancelbtn"><a href="/">Canceal</a></button>
+           <button type="submit" class="deletebtn">Delete</button>
+           </div>
+         </div>
+        </form>
+       </div>
+     </div>
+  </div>  
+ </div>
+        
+</div>
+      
+          
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
+  <script>
+      // Get the modal
+const modal = document.getElementById('id01');
+
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal ) {
+    modal.style.display = "none";
+  }
+}
+ 
+
+    </script>
+</body>
+</html
